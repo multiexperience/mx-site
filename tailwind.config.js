@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {},
+    colors: {
+      'mx-cyan': '#1dffff',
+      'mx-pink': "#ff004f"
+    }
   },
   plugins: [],
 }
