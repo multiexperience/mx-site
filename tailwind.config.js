@@ -5,11 +5,15 @@ export default {
     "./src/**/*.tsx"
   ],
   theme: {
-    extend: {},
-    colors: {
-      'mx-cyan': '#1dffff',
-      'mx-pink': "#ff004f"
-    }
+    extend: {
+      screens: {
+        'xs': '375px'
+      },
+      colors: {
+        'mx-cyan': '#1dffff',
+        'mx-pink': "#ff004f"
+      }
+    },
   },
   plugins: [],
 }
