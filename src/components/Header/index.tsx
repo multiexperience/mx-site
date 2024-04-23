@@ -3,6 +3,9 @@ import instagramIcon from "../../assets/instagram-icon.png"
 import linkedinIcon from "../../assets/linkedin-icon.png"
 import xIcon from "../../assets/x-icon.png"
 import whatsappIcon from "../../assets/whatsapp-icon.png"
+import githubIcon from "../../assets/github-icon.png"
+import emailIcon from "../../assets/email-icon.png"
+
 
 function Header() {
 
@@ -25,6 +28,14 @@ function Header() {
 
             <a href="https://api.whatsapp.com/send?phone=5513981813437" className="text-[0px]" target="_blank">
                 <img className="w-8 invert" src={whatsappIcon} alt="logo whatsapp" />
+            </a>
+
+            <a href="https://github.com/multiexperience" className="text-[0px]" target="_blank">
+                <img className="w-8 invert" src={githubIcon} alt="logo github" />
+            </a>
+
+            <a href="mailto:contato@multiexperience.com.br" className="text-[0px]" target="_blank">
+                <img className="w-8 invert" src={emailIcon} alt="logo email" />
             </a>
         </div>
     </header>
