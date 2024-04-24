@@ -26,7 +26,7 @@ function Header() {
                 <img className="w-8 invert" src={xIcon} alt="logo x" />
             </a>
 
-            <a href="https://api.whatsapp.com/send?phone=5513981813437" className="text-[0px]" target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=5513996773215" className="text-[0px]" target="_blank">
                 <img className="w-8 invert" src={whatsappIcon} alt="logo whatsapp" />
             </a>
 
