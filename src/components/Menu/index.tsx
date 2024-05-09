@@ -13,11 +13,11 @@ function Menu() {
 
   return (
     <nav className="fixed top-0 w-full z-30">
-      <div className="contentWidth1200 px-10 py-16 flex w-full h-20 items-center text-4xl">
+      <div className="contentWidth1200 px-3 py-16 flex w-full h-20 items-center text-4xl">
         <ul className="list-none flex w-full items-center">
           <li className="mr-auto"><Link to="/"><img className={logoWidth} src={!isMenuOpen ? mxFullLogo : mxLogo} alt="logo multiexperience" /></Link></li>
           
-          <div className={twMerge("transition-all duration-300 absolute top-0 right-0 w-3/4 h-screen bg-[#F3F4F6] p-10 pt-28 text-5xl border-l border-l-neutral-400", hideMenu)}>
+          <div className={twMerge("transition-all duration-300 absolute top-0 right-0 w-3/4 h-screen bg-[#F3F4F6] p-10 pt-28 pr-4 text-5xl border-l border-l-neutral-400", hideMenu)}>
             <li className=""><Link to="/">Home</Link></li>
             <li className="mt-10"><Link to="/about">About</Link></li>
             <li className="mt-10"><Link to="/solutions">Solutions</Link></li>
