@@ -1,0 +1,16 @@
+@keyframes horizontal-shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+}
+
+.pitch-gradient {
+  background: linear-gradient(#2e2e2e 45%, #000000);
+  background-clip: text;
+}
+
+.btn-action:hover, .btn-action:focus {
+  animation: horizontal-shaking 0.35s forwards;
+}
