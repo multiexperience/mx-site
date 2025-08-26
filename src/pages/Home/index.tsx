@@ -270,7 +270,7 @@ function Home() {
 
         <ServicesSection />
 
-          <section className="bg-gradient-to-br from-neutral-900 to-black w-full min-h-[90vh] flex items-center justify-center py-16 md:py-32">
+          <section id="contact-section" className="bg-gradient-to-br from-neutral-900 to-black w-full min-h-[90vh] flex items-center justify-center py-16 md:py-32">
               <div className='max-w-[1200px] w-[90%] mx-auto'>
                 <div className='text-center mb-8 md:mb-16 px-4'>
                   <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4'>Ready to Transform Your Business?</h2>

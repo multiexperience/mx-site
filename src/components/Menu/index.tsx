@@ -21,6 +21,7 @@ function Menu() {
   ]
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkSection, setIsDarkSection] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -28,17 +29,40 @@ function Menu() {
       if (scrolled !== isScrolled) {
         setIsScrolled(scrolled);
       }
+
+      // Check if contact section or footer is in view
+      const contactSection = document.getElementById('contact-section');
+      const footer = document.querySelector('footer.bg-black');
+      let isInDarkArea = false;
+      
+      if (contactSection) {
+        const rect = contactSection.getBoundingClientRect();
+        isInDarkArea = rect.top <= 80 && rect.bottom >= 80;
+      }
+      
+      if (!isInDarkArea && footer) {
+        const footerRect = footer.getBoundingClientRect();
+        isInDarkArea = footerRect.top <= 80 && footerRect.bottom >= 80;
+      }
+      
+      if (isInDarkArea !== isDarkSection) {
+        setIsDarkSection(isInDarkArea);
+      }
     }
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial state
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isScrolled]);
+  }, [isScrolled, isDarkSection]);
   
   return (
-    <nav className={`fixed top-0 w-full z-30 transition-all ${
-      isScrolled &&
-      " shadow-sm backdrop-blur-md bg-white/45"
+    <nav className={`fixed top-0 w-full z-30 transition-all duration-300 ${
+      isDarkSection 
+        ? "shadow-lg backdrop-blur-md bg-white/95" 
+        : isScrolled 
+          ? "shadow-sm backdrop-blur-md bg-white/45"
+          : ""
     }`}>
       <div className="contentWidth1400 my-4 flex w-full h-20 items-center justify-between text-4xl md:my-0 ">
         <Link to="/"><img className={twMerge('min-w-64', logoWidth)} src={!isMenuOpen ? mxFullLogo : mxLogo} alt="logo multiexperience" /></Link>
