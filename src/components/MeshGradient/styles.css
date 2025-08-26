@@ -1,0 +1,53 @@
+
+.color-1 {
+  background: radial-gradient(circle, #1dffff, transparent 70%);
+  top: -2.5rem;
+  left: -2.5rem;
+  scale: 2;
+}
+.color-2 {
+  background: radial-gradient(circle, #4eb5f8, transparent 70%);
+  top: -2.5rem; 
+  left: 0; 
+  right: 0;
+  margin: 0 auto;
+  scale: 2;
+}
+.color-3 {
+  background: radial-gradient(circle, #5066f2, transparent 70%);
+  top: -2.5rem;
+  right: -2.5rem;
+  scale: 2;
+}
+.color-4 {
+  background: radial-gradient(circle, #C445FF, transparent 70%);
+  bottom: -2.5rem;
+  right: -2.5rem;
+  scale: 2;
+}
+.color-5 {
+  background: radial-gradient(circle, #FF17B6, transparent 70%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -2.5rem;
+  scale: 2;
+
+}
+.color-6 {
+  background: radial-gradient(circle, #FF004F, transparent 70%);
+  left: -2.5rem;
+  bottom: -2.5rem;
+  scale: 2;
+}
+
+
+.gradient {
+  /* background: linear-gradient(130deg, #1dffff, #4eb5f8, #5066f2, #C445FF, #FF17B6, #FF004F); */
+  background-image: url('../../assets/blob.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 100%;
+  
+}
