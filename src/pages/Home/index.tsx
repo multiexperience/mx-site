@@ -7,6 +7,7 @@ import MeshGradient from '@/components/MeshGradient'
 import ServicesSection from '@/components/ServicesSection'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import GradientBackground from '@/components/GradientBackground'
+import { useRef, useEffect, useState } from 'react'
 
 // Tech stack images
 import reactImg from '@/assets/reactjs.png'
@@ -23,6 +24,37 @@ import figmaImg from '@/assets/figma.png'
 import mongoImg from '@/assets/mongo.png'
 
 function Home() {
+  const servicesRef = useRef<HTMLDivElement>(null)
+  const contactRef = useRef<HTMLDivElement>(null)
+  const [darkOverlayOpacity, setDarkOverlayOpacity] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!servicesRef.current) return
+
+      const servicesRect = servicesRef.current.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+
+      // Calculate when to start showing the dark overlay
+      // Start when bottom of services section reaches middle of viewport
+      const triggerPoint = windowHeight * 0.5
+      
+      if (servicesRect.bottom <= triggerPoint) {
+        // Calculate opacity based on how far we've scrolled past the trigger
+        const scrollDistance = triggerPoint - servicesRect.bottom
+        const maxScrollDistance = windowHeight * 0.5 // Full opacity after scrolling half viewport height
+        const opacity = Math.min(1, scrollDistance / maxScrollDistance)
+        setDarkOverlayOpacity(opacity)
+      } else {
+        setDarkOverlayOpacity(0)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
@@ -30,7 +62,7 @@ function Home() {
       <Menu />
       <Header />
 
-      <main className="px-4 md:px-8 my-4 md:px-10 2xl:px-0 relative">
+      <main className="my-4 relative">
         {/* Tech Stack Showcase */}
         <section className="contentWidth1400 py-12 md:py-20">
           <motion.div 
@@ -268,9 +300,30 @@ function Home() {
           </FollowCursor>
         </section>
 
-        <ServicesSection />
+        <div ref={servicesRef}>
+          <ServicesSection />
+        </div>
 
-          <section id="contact-section" className="bg-gradient-to-br from-neutral-900 to-black w-full min-h-[90vh] flex items-center justify-center py-16 md:py-32">
+        {/* Dark overlay that gradually covers the screen */}
+        <div 
+          className="fixed inset-0 bg-black pointer-events-none transition-opacity duration-700 ease-out"
+          style={{
+            opacity: darkOverlayOpacity,
+            zIndex: 5
+          }}
+        />
+
+          {/* Contact section with fade-in effect */}
+          <section 
+            ref={contactRef} 
+            id="contact-section" 
+            className="relative w-full min-h-[90vh] flex items-center justify-center pt-72 pb-16 md:pt-52 md:pb-32 transition-opacity duration-700"
+            style={{
+              opacity: darkOverlayOpacity,
+              zIndex: 10,
+              pointerEvents: darkOverlayOpacity > 0.5 ? 'auto' : 'none'
+            }}
+          >
               <div className='max-w-[1200px] w-[90%] mx-auto'>
                 <div className='text-center mb-8 md:mb-16 px-4'>
                   <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4'>Ready to Transform Your Business?</h2>
@@ -309,7 +362,7 @@ function Home() {
                               </div>
                               <div>
                                 <p className='text-sm text-gray-400'>Phone</p>
-                                <p className='font-medium'>+1 (555) 123-4567</p>
+                                <p className='font-medium'>+55 (13) 99677-3215</p>
                               </div>
                             </div>
                             
@@ -402,7 +455,16 @@ function Home() {
                 </div>
               </div>
           </section>
-          <footer className="bg-black w-full py-16 border-t border-gray-800">
+          
+          {/* Footer with same fade-in effect */}
+          <footer 
+            className="relative bg-black w-full py-16 border-t border-gray-800 transition-opacity duration-700"
+            style={{
+              opacity: darkOverlayOpacity,
+              zIndex: 10,
+              pointerEvents: darkOverlayOpacity > 0.5 ? 'auto' : 'none'
+            }}
+          >
             <div className="contentWidth1400 mx-auto px-8 md:px-10 2xl:px-0">
               {/* Footer Top */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">

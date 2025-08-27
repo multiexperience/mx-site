@@ -4,14 +4,25 @@ import { motion, AnimatePresence } from 'framer-motion'
 function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false)
   const [showTooltip, setShowTooltip] = useState(false)
+  const [showNotification, setShowNotification] = useState(true)
+  const [hasUnread, setHasUnread] = useState(false)
 
   const handleClick = () => {
     const message = encodeURIComponent(
       "Hi! I'm interested in learning more about Multiexperience's services. Can we schedule a consultation?"
     )
-    const whatsappNumber = "5511999999999" // Replace with actual WhatsApp number
+    const whatsappNumber = "5513996773215" // Replace with actual WhatsApp number
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`
     window.open(whatsappURL, '_blank')
+    
+    // Clear notification badge when clicked
+    setHasUnread(false)
+  }
+
+  const handleCloseNotification = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setShowNotification(false)
+    setHasUnread(true) // Show badge when notification is closed
   }
 
   return (
@@ -40,7 +51,7 @@ function WhatsAppButton() {
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+            className="relative w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
           >
             <motion.svg 
               width="28" 
@@ -58,6 +69,21 @@ function WhatsAppButton() {
             
             {/* Pulse effect */}
             <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"></div>
+            
+            {/* Notification badge */}
+            <AnimatePresence>
+              {hasUnread && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center shadow-lg"
+                >
+                  <span className="text-white text-xs font-bold">1</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.button>
 
           {/* Tooltip */}
@@ -79,36 +105,42 @@ function WhatsAppButton() {
       </motion.div>
 
       {/* Notification bubble */}
-      <motion.div
-        className="fixed bottom-24 right-6 z-40"
-        initial={{ opacity: 0, y: 20, scale: 0 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 4, duration: 0.5 }}
-      >
-        <motion.div 
-          className="bg-white rounded-lg shadow-xl p-4 max-w-xs border border-gray-200"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <div className="flex items-start gap-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-sm font-bold">M</span>
-            </div>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-gray-900 mb-1">Multiexperience Team</p>
-              <p className="text-xs text-gray-600">👋 Hi! Need help with your project? Let's chat!</p>
-            </div>
-            <motion.button
-              className="text-gray-400 hover:text-gray-600 text-sm"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+      <AnimatePresence>
+        {showNotification && (
+          <motion.div
+            className="fixed bottom-24 right-6 z-40"
+            initial={{ opacity: 0, y: 20, scale: 0 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0 }}
+            transition={{ delay: 4, duration: 0.5 }}
+          >
+            <motion.div 
+              className="bg-white rounded-lg shadow-xl p-4 max-w-xs border border-gray-200"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
-              ×
-            </motion.button>
-          </div>
-        </motion.div>
-      </motion.div>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-sm font-bold">M</span>
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-gray-900 mb-1">Multiexperience Team</p>
+                  <p className="text-xs text-gray-600">👋 Hi! Need help with your project? Let's chat!</p>
+                </div>
+                <motion.button
+                  onClick={handleCloseNotification}
+                  className="text-gray-400 hover:text-gray-600 text-sm p-1 -m-1"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  ×
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
