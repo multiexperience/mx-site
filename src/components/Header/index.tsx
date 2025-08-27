@@ -8,7 +8,6 @@ function Header() {
     <header className="contentWidth1400 w-full min-h-screen flex gap-12 flex-col items-center justify-center p-8 mt-20 md:px-10 2xl:px-0 relative">
       {/* Floating elements for visual interest */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-40 right-16 w-24 h-24 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-lg animate-bounce"></div>
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
