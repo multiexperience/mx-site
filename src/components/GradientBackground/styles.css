@@ -1,0 +1,183 @@
+/* ============================================
+   GRADIENT BACKGROUND — Volcanic Glass Texture
+   Layered depth: mesh + blobs + grain + stipple + vignette
+   ============================================ */
+
+/* ---- CRYSTALLINE MESH — tonal variation layer ---- */
+
+.crystal-mesh {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, hsla(263, 40%, 90%, 0.4) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 50% at 75% 60%, hsla(330, 35%, 92%, 0.35) 0%, transparent 65%),
+    radial-gradient(ellipse 90% 70% at 50% 80%, hsla(187, 30%, 90%, 0.3) 0%, transparent 70%);
+  animation: mesh-drift 30s ease-in-out infinite;
+}
+
+@keyframes mesh-drift {
+  0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
+  33% { opacity: 0.75; transform: scale(1.05) rotate(0.5deg); }
+  66% { opacity: 0.55; transform: scale(0.98) rotate(-0.3deg); }
+}
+
+/* ---- LAVA BLOBS — varied blur depths for parallax feel ---- */
+
+.lava-blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  will-change: transform;
+}
+
+/* Cyan — sharper foreground (less blur = more definition) */
+.lava-blob-1 {
+  width: 45%;
+  height: 50%;
+  top: 5%;
+  left: 10%;
+  background: radial-gradient(circle, #1dffff 0%, transparent 70%);
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: drift-1 18s ease-in-out infinite;
+}
+
+/* Blue — mid-depth */
+.lava-blob-2 {
+  width: 40%;
+  height: 45%;
+  top: 15%;
+  right: 5%;
+  background: radial-gradient(circle, #4eb5f8 0%, transparent 70%);
+  filter: blur(80px);
+  animation: drift-2 22s ease-in-out infinite;
+}
+
+/* Indigo — sharpest, creates visible definition against texture */
+.lava-blob-3 {
+  width: 50%;
+  height: 55%;
+  bottom: 10%;
+  left: 25%;
+  background: radial-gradient(circle, #5066f2 0%, transparent 70%);
+  filter: blur(55px);
+  opacity: 0.45;
+  animation: drift-3 20s ease-in-out infinite;
+}
+
+/* Purple — deep blur background plane */
+.lava-blob-4 {
+  width: 38%;
+  height: 42%;
+  top: 30%;
+  left: 5%;
+  background: radial-gradient(circle, #C445FF 0%, transparent 70%);
+  filter: blur(90px);
+  opacity: 0.55;
+  animation: drift-4 24s ease-in-out infinite;
+}
+
+/* Pink — sharper foreground */
+.lava-blob-5 {
+  width: 42%;
+  height: 48%;
+  bottom: 5%;
+  right: 15%;
+  background: radial-gradient(circle, #FF17B6 0%, transparent 70%);
+  filter: blur(65px);
+  opacity: 0.5;
+  animation: drift-5 19s ease-in-out infinite;
+}
+
+/* Red-pink — deep background */
+.lava-blob-6 {
+  width: 35%;
+  height: 40%;
+  top: 50%;
+  right: 30%;
+  background: radial-gradient(circle, #FF004F 0%, transparent 70%);
+  filter: blur(85px);
+  opacity: 0.55;
+  animation: drift-6 21s ease-in-out infinite;
+}
+
+/* ---- COARSE GRAIN — visible volcanic surface texture ---- */
+
+.grain-coarse {
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' seed='1' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 512px 512px;
+}
+
+/* ---- FINE STIPPLE — micro-texture for materiality ---- */
+
+.grain-fine {
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ---- VIGNETTE — subtle edge darkening ---- */
+
+.bg-vignette {
+  background: radial-gradient(
+    ellipse 85% 80% at 50% 45%,
+    transparent 50%,
+    hsla(40, 15%, 92%, 0.5) 100%
+  );
+}
+
+/* ---- DRIFT ANIMATIONS — unchanged ---- */
+
+@keyframes drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(60px, -40px) scale(1.1); }
+  40% { transform: translate(-30px, 70px) scale(0.95); }
+  60% { transform: translate(80px, 30px) scale(1.15); }
+  80% { transform: translate(-50px, -60px) scale(0.9); }
+}
+
+@keyframes drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(-70px, 50px) scale(1.05); }
+  40% { transform: translate(40px, -60px) scale(1.12); }
+  60% { transform: translate(-50px, -30px) scale(0.88); }
+  80% { transform: translate(60px, 70px) scale(1.08); }
+}
+
+@keyframes drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(50px, -80px) scale(1.1); }
+  50% { transform: translate(-60px, 40px) scale(0.92); }
+  75% { transform: translate(70px, 60px) scale(1.08); }
+}
+
+@keyframes drift-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(80px, 40px) scale(0.9); }
+  40% { transform: translate(-40px, -70px) scale(1.15); }
+  60% { transform: translate(30px, 80px) scale(1.05); }
+  80% { transform: translate(-70px, -20px) scale(0.95); }
+}
+
+@keyframes drift-5 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-60px, -50px) scale(1.12); }
+  50% { transform: translate(70px, 30px) scale(0.88); }
+  75% { transform: translate(-30px, 70px) scale(1.06); }
+}
+
+@keyframes drift-6 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(40px, 60px) scale(1.08); }
+  40% { transform: translate(-80px, -30px) scale(0.92); }
+  60% { transform: translate(50px, -70px) scale(1.14); }
+  80% { transform: translate(-40px, 40px) scale(0.96); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lava-blob,
+  .crystal-mesh {
+    animation: none !important;
+  }
+}

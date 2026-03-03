@@ -1,0 +1,174 @@
+/* ============================================
+   NEON GLOW — Dynamic backlight behind the
+   product card. Colors via inline styles,
+   movement unique per product.
+   ============================================ */
+
+.neon-glow {
+  position: absolute;
+  border-radius: 40%;
+  will-change: transform, opacity, border-radius;
+  mix-blend-mode: screen;
+}
+
+/* ---- Base positions & blur ---- */
+
+.neon-glow-primary {
+  width: 110%;
+  height: 130%;
+  top: -15%;
+  left: -5%;
+  filter: blur(50px);
+  -webkit-filter: blur(50px);
+}
+
+.neon-glow-secondary {
+  width: 80%;
+  height: 100%;
+  top: 0%;
+  left: 25%;
+  filter: blur(45px);
+  -webkit-filter: blur(45px);
+}
+
+.neon-glow-accent {
+  width: 65%;
+  height: 85%;
+  top: -5%;
+  left: -8%;
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+}
+
+/* ============================================
+   PRODUCT 0 — mx-clinics (purple/pink)
+   Slow orbital drift, clinical and steady
+   ============================================ */
+
+.glow-movement-0 .neon-glow-primary {
+  animation: p0-primary 14s ease-in-out infinite, glow-morph-1 16s ease-in-out infinite;
+}
+.glow-movement-0 .neon-glow-secondary {
+  animation: p0-secondary 18s ease-in-out infinite, glow-morph-2 20s ease-in-out infinite;
+}
+.glow-movement-0 .neon-glow-accent {
+  animation: p0-accent 12s ease-in-out infinite, glow-morph-3 14s ease-in-out infinite;
+}
+
+@keyframes p0-primary {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(2%, -1.5%) scale(1.04) rotate(1deg); }
+  50% { transform: translate(-1%, 2%) scale(0.97) rotate(-1deg); }
+  75% { transform: translate(1.5%, -0.5%) scale(1.02) rotate(0.5deg); }
+}
+
+@keyframes p0-secondary {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  30% { transform: translate(-3%, 1.5%) scale(1.06); }
+  60% { transform: translate(2%, -1%) scale(0.95); }
+}
+
+@keyframes p0-accent {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(2.5%, 2%) scale(1.08); }
+  70% { transform: translate(-1.5%, -1%) scale(0.96); }
+}
+
+/* ============================================
+   PRODUCT 1 — coincoin (amber/orange)
+   Playful, bouncy, slightly faster movement
+   ============================================ */
+
+.glow-movement-1 .neon-glow-primary {
+  animation: p1-primary 10s ease-in-out infinite, glow-morph-1 12s ease-in-out infinite;
+}
+.glow-movement-1 .neon-glow-secondary {
+  animation: p1-secondary 8s ease-in-out infinite, glow-morph-2 14s ease-in-out infinite;
+}
+.glow-movement-1 .neon-glow-accent {
+  animation: p1-accent 12s ease-in-out infinite, glow-morph-3 10s ease-in-out infinite;
+}
+
+@keyframes p1-primary {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(3%, -2%) scale(1.08); }
+  40% { transform: translate(-2%, 3%) scale(0.95); }
+  60% { transform: translate(1%, -1%) scale(1.05); }
+  80% { transform: translate(-3%, 1%) scale(0.98); }
+}
+
+@keyframes p1-secondary {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(-4%, -1%) scale(1.1) rotate(2deg); }
+  50% { transform: translate(3%, 2%) scale(0.93) rotate(-1deg); }
+  75% { transform: translate(-1%, -2%) scale(1.06) rotate(1deg); }
+}
+
+@keyframes p1-accent {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  30% { transform: translate(4%, 2.5%) scale(1.12); }
+  60% { transform: translate(-3%, -1.5%) scale(0.94); }
+}
+
+/* ============================================
+   PRODUCT 2 — Espaço Adapta (blue/cyan)
+   Calm, flowing, wave-like horizontal sway
+   ============================================ */
+
+.glow-movement-2 .neon-glow-primary {
+  animation: p2-primary 16s ease-in-out infinite, glow-morph-1 18s ease-in-out infinite;
+}
+.glow-movement-2 .neon-glow-secondary {
+  animation: p2-secondary 20s ease-in-out infinite, glow-morph-2 22s ease-in-out infinite;
+}
+.glow-movement-2 .neon-glow-accent {
+  animation: p2-accent 14s ease-in-out infinite, glow-morph-3 16s ease-in-out infinite;
+}
+
+@keyframes p2-primary {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(4%, 0.5%) scale(1.03); }
+  66% { transform: translate(-3%, -0.5%) scale(0.98); }
+}
+
+@keyframes p2-secondary {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(-3%, 1%) scale(1.04) rotate(-0.5deg); }
+  50% { transform: translate(2%, -0.5%) scale(0.97) rotate(0.5deg); }
+  75% { transform: translate(-1%, 0.5%) scale(1.02) rotate(-0.3deg); }
+}
+
+@keyframes p2-accent {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3%, -1%) scale(1.06); }
+}
+
+/* ============================================
+   SHARED MORPH — organic shape-shifting
+   ============================================ */
+
+@keyframes glow-morph-1 {
+  0%, 100% { border-radius: 40% 60% 55% 45% / 50% 40% 60% 50%; }
+  25% { border-radius: 55% 45% 40% 60% / 45% 55% 45% 55%; }
+  50% { border-radius: 48% 52% 60% 40% / 55% 42% 58% 48%; }
+  75% { border-radius: 60% 40% 45% 55% / 40% 60% 50% 50%; }
+}
+
+@keyframes glow-morph-2 {
+  0%, 100% { border-radius: 50% 50% 45% 55% / 45% 55% 50% 50%; }
+  33% { border-radius: 42% 58% 55% 45% / 58% 42% 52% 48%; }
+  66% { border-radius: 55% 45% 42% 58% / 48% 52% 58% 42%; }
+}
+
+@keyframes glow-morph-3 {
+  0%, 100% { border-radius: 45% 55% 60% 40% / 55% 45% 50% 50%; }
+  50% { border-radius: 58% 42% 48% 52% / 42% 58% 55% 45%; }
+}
+
+/* ---- REDUCED MOTION ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-glow {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,205 @@
+/* ============================================
+   HOME PAGE — Glass-morphism refinements
+   for contact section and footer
+   ============================================ */
+
+/* Glass input fields — frosted surface feel */
+.glass-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  color: white;
+  font-size: 0.875rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.glass-input:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.glass-input:focus {
+  border-color: hsl(263 70% 58% / 0.6);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 0 0 3px hsl(263 70% 58% / 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Glass textarea inherits input styles */
+textarea.glass-input {
+  resize: none;
+  min-height: 120px;
+}
+
+/* Glass icon circle — contact info icons */
+.glass-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.glass-icon:hover,
+.group:hover .glass-icon {
+  background: hsl(263 70% 58% / 0.12);
+  border-color: hsl(263 70% 58% / 0.3);
+  box-shadow: 0 0 16px hsl(263 70% 58% / 0.15);
+}
+
+/* Glass submit button */
+.glass-submit {
+  position: relative;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(135deg, hsl(263 70% 58%), hsl(330 81% 60%));
+  border: none;
+  border-radius: 0.75rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Inner glass sheen on button */
+.glass-submit::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: calc(0.75rem - 1px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.glass-submit:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 8px 32px hsl(263 70% 58% / 0.3),
+    0 2px 8px hsl(330 81% 60% / 0.2);
+}
+
+.glass-submit:active {
+  transform: translateY(0);
+}
+
+/* Gradient top accent for cards */
+.glass-accent-top {
+  position: relative;
+}
+
+.glass-accent-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(263 70% 58% / 0.5) 30%,
+    hsl(330 81% 60% / 0.4) 70%,
+    transparent 100%
+  );
+}
+
+/* Glass vertical divider */
+.glass-divider-v {
+  width: 1px;
+  align-self: stretch;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+/* Glass horizontal divider */
+.glass-divider-h {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+/* Social pill — glass style */
+.glass-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.glass-pill:hover {
+  background: hsl(263 70% 58% / 0.12);
+  border-color: hsl(263 70% 58% / 0.25);
+  box-shadow: 0 0 20px hsl(263 70% 58% / 0.1);
+}
+
+/* Footer link hover — subtle underline reveal */
+.footer-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.2s ease;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: hsl(263 70% 58%);
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
