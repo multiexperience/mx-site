@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "products": "Products",
+    "contact": "Contact",
+    "cta": "Get in touch"
+  },
+  "hero": {
+    "badge": "Available for new projects",
+    "title_line1": "We build",
+    "title_line2": "that actually works.",
+    "typed": ["custom software", "process automation", "clinic management", "digital presence", "mobile software", "tech for startups", "system integration"],
+    "subtitle": "Technology and consulting that help businesses evolve with software, processes, and strategy. No trends. Just clarity.",
+    "cta_primary": "Talk to us",
+    "cta_secondary": "Explore our services",
+    "trust_founded": "Founded in 2020",
+    "trust_location": "Santos, SP — Brazil",
+    "trust_approach": "Continuous delivery"
+  },
+  "tech": {
+    "label": "Built with modern technology",
+    "title": "Our Tech Stack"
+  },
+  "about": {
+    "card1_title": "Who we are",
+    "card1_intro": "Born from frustration with outdated models and the conviction that technology can be done with more truth, responsibility, and real value.",
+    "card1_items": [
+      { "title": "Quality over speed", "desc": "Robust deliveries that generate lasting value" },
+      { "title": "People first", "desc": "Technology serves people, not the other way around" },
+      { "title": "Empiricism", "desc": "We learn by doing, testing, and validating with real data" },
+      { "title": "Radical transparency", "desc": "You always know exactly what's happening" }
+    ],
+    "card2_title": "How we work",
+    "card2_intro": "Real agile methodology, based on Kanban. Short delivery cycles with real value at every iteration.",
+    "card2_steps": [
+      { "step": "01", "label": "Deep understanding", "desc": "We map your goals, pain points, and constraints in a focused strategy session." },
+      { "step": "02", "label": "Custom solution", "desc": "We design the right approach for your problem. No off-the-shelf packages." },
+      { "step": "03", "label": "Continuous delivery", "desc": "We build in short cycles. You follow along and validate at every step." },
+      { "step": "04", "label": "Constant evolution", "desc": "We don't disappear after delivery. We iterate, measure, and continuously improve." }
+    ]
+  },
+  "services": {
+    "label": "What we do",
+    "title": "Our Services",
+    "subtitle": "Three integrated fronts to solve real problems in your business.",
+    "items": [
+      {
+        "title": "Consulting",
+        "description": "Business processes, agility, and digital transformation. Practical, no dogma, results-driven.",
+        "benefits": ["Process mapping", "Pragmatic digital transformation", "Agile management with Kanban", "Strategy and operational clarity"],
+        "cta": "Learn more"
+      },
+      {
+        "title": "Development",
+        "description": "Digital presence, custom software, and business-aligned solutions — not the other way around.",
+        "benefits": ["Web and mobile applications", "On-demand systems", "Integrations and APIs", "Scalable architecture"],
+        "cta": "Learn more"
+      },
+      {
+        "title": "Own Products",
+        "description": "In-house digital products built to solve specific market pain points.",
+        "benefits": ["mx-clinics — clinic management", "coincoin — kids financial education", "Espaço Adapta — multidisciplinary clinic", "Solutions validated with real users"],
+        "cta": "See products"
+      }
+    ],
+    "bottom_text": "Not sure where to start?",
+    "bottom_cta": "Schedule a conversation"
+  },
+  "products": {
+    "label": "Our products",
+    "title": "What we're building",
+    "subtitle": "In-house digital products that solve real market problems.",
+    "items": [
+      {
+        "name": "mx-clinics",
+        "description": "Platform for therapists and multidisciplinary clinics. Patient evolution management, scheduling, treatment cycle reports, and clinical decision support.",
+        "tags": ["Patient evolution", "Scheduling", "Reports", "Clinical decisions"],
+        "status": "Live",
+        "url": "https://mxclinics.com.br",
+        "cta": "Visit"
+      },
+      {
+        "name": "coincoin",
+        "description": "Financial education app for kids. Children complete tasks, earn coins, and learn to invest and manage rewards — with parental oversight.",
+        "tags": ["Financial education", "Gamification", "Parental control", "Investments"],
+        "status": "Beta",
+        "url": "https://www.coincoin.com.br",
+        "cta": "Learn more"
+      },
+      {
+        "name": "Espaço Adapta",
+        "description": "Digital presence for a multidisciplinary pediatric clinic in Santos. Specialized ABA therapy for children and adolescents with ASD, ADHD, and learning difficulties.",
+        "tags": ["ABA Therapy", "Multidisciplinary", "Inclusion", "Child development"],
+        "status": "Published",
+        "url": "https://espacoadapta.com.br",
+        "cta": "Visit"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's talk?",
+    "subtitle": "Tell us how we can help your business evolve.",
+    "info_title": "Get in touch",
+    "info_subtitle": "Our team usually responds within 24 hours.",
+    "email_label": "Email",
+    "email": "contato@multiexperience.com.br",
+    "phone_label": "Phone",
+    "phone": "+55 (13) 99677-3215",
+    "location_label": "Where we are",
+    "location": "Santos, SP — Brazil",
+    "social_label": "Follow us",
+    "form_name": "Your name",
+    "form_email": "Your email",
+    "form_message_label": "How can we help?",
+    "form_message_placeholder": "Tell us a bit about what you need...",
+    "form_submit": "Send via WhatsApp",
+    "form_or": "or email us at",
+    "whatsapp_cta": "WhatsApp"
+  },
+  "footer": {
+    "tagline": "Technology and consulting for businesses seeking clarity, organization, and real evolution.",
+    "services_title": "Services",
+    "services_items": ["Consulting", "Development", "Products"],
+    "company_title": "Company",
+    "company_items": ["About us", "Contact"],
+    "product_title": "Products",
+    "product_items": ["mx-clinics", "coincoin", "Espaço Adapta"],
+    "copyright": "multiexperience. All rights reserved."
+  },
+  "whatsapp": {
+    "tooltip": "Start a conversation",
+    "notification_name": "Multiexperience Team",
+    "notification_text": "Hi! Need help with your project? Let's chat!",
+    "default_message": "Hi! I'm interested in learning more about Multiexperience's services. Can we schedule a conversation?"
+  }
+}

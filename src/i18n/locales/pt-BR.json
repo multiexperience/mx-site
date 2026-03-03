@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "products": "Produtos",
+    "contact": "Contato",
+    "cta": "Fale conosco"
+  },
+  "hero": {
+    "badge": "Abertos para novos projetos",
+    "title_line1": "Construímos",
+    "title_line2": "que funciona de verdade.",
+    "typed": ["software sob medida", "produto digital real", "automação de processos", "sistema para clínicas", "presença digital real", "integração de sistemas", "aplicativo sob medida"],
+    "subtitle": "Tecnologia e consultoria que ajudam negócios a evoluir com software, processos e estratégia. Sem modismos. Com clareza.",
+    "cta_primary": "Fale com a gente",
+    "cta_secondary": "Conheça nossos serviços",
+    "trust_founded": "Fundada em 2020",
+    "trust_location": "Santos, SP",
+    "trust_approach": "Entregas contínuas"
+  },
+  "tech": {
+    "label": "Construído com tecnologia moderna",
+    "title": "Nosso Stack"
+  },
+  "about": {
+    "card1_title": "Quem somos",
+    "card1_intro": "Nascemos da frustração com modelos ultrapassados e da convicção de que tecnologia pode ser feita com mais verdade, responsabilidade e valor real.",
+    "card1_items": [
+      { "title": "Qualidade acima de velocidade", "desc": "Entregas robustas que geram valor duradouro" },
+      { "title": "Pessoas em primeiro lugar", "desc": "Tecnologia serve pessoas, não o contrário" },
+      { "title": "Empirismo", "desc": "Aprendemos fazendo, testando e validando com dados reais" },
+      { "title": "Transparência radical", "desc": "Você sabe exatamente o que está acontecendo, sempre" }
+    ],
+    "card2_title": "Como trabalhamos",
+    "card2_intro": "Metodologia ágil de verdade, baseada em Kanban. Ciclos curtos de entrega contínua com valor real a cada iteração.",
+    "card2_steps": [
+      { "step": "01", "label": "Entendimento profundo", "desc": "Mapeamos seus objetivos, dores e restrições numa sessão estratégica focada." },
+      { "step": "02", "label": "Solução sob medida", "desc": "Desenhamos a abordagem certa para o seu problema. Sem pacotes prontos." },
+      { "step": "03", "label": "Entrega contínua", "desc": "Construímos em ciclos curtos. Você acompanha e valida a cada etapa." },
+      { "step": "04", "label": "Evolução constante", "desc": "Não desaparecemos após a entrega. Iteramos, medimos e melhoramos continuamente." }
+    ]
+  },
+  "services": {
+    "label": "O que fazemos",
+    "title": "Nossos Serviços",
+    "subtitle": "Três frentes integradas para resolver problemas de verdade no seu negócio.",
+    "items": [
+      {
+        "title": "Consultoria",
+        "description": "Processos de negócio, agilidade e transformação digital. Prática, sem dogma, orientada a resultado.",
+        "benefits": ["Mapeamento de processos", "Transformação digital pragmática", "Gestão ágil com Kanban", "Estratégia e clareza operacional"],
+        "cta": "Saiba mais"
+      },
+      {
+        "title": "Desenvolvimento",
+        "description": "Presença digital, software sob medida e soluções alinhadas ao negócio — e não o contrário.",
+        "benefits": ["Aplicações web e mobile", "Sistemas sob demanda", "Integrações e APIs", "Arquitetura escalável"],
+        "cta": "Saiba mais"
+      },
+      {
+        "title": "Produtos Próprios",
+        "description": "Produtos digitais desenvolvidos internamente para resolver dores específicas de mercado.",
+        "benefits": ["mx-clinics — gestão para clínicas", "coincoin — educação financeira infantil", "Espaço Adapta — clínica multidisciplinar", "Soluções validadas com usuários reais"],
+        "cta": "Ver produtos"
+      }
+    ],
+    "bottom_text": "Não sabe por onde começar?",
+    "bottom_cta": "Agende uma conversa"
+  },
+  "products": {
+    "label": "Nossos produtos",
+    "title": "O que estamos construindo",
+    "subtitle": "Produtos digitais próprios que resolvem problemas reais de mercado.",
+    "items": [
+      {
+        "name": "mx-clinics",
+        "description": "Plataforma para terapeutas e clínicas multidisciplinares. Gestão de evolução de pacientes, agendamentos, relatórios de ciclo de tratamento e suporte à decisão clínica.",
+        "tags": ["Evolução de pacientes", "Agendamento", "Relatórios", "Decisão clínica"],
+        "status": "Em operação",
+        "url": "https://mxclinics.com.br",
+        "cta": "Acessar"
+      },
+      {
+        "name": "coincoin",
+        "description": "App de educação financeira infantil. Crianças completam tarefas, ganham moedas e aprendem a investir e gerenciar recompensas — com acompanhamento dos pais.",
+        "tags": ["Educação financeira", "Gamificação", "Controle parental", "Investimentos"],
+        "status": "Beta",
+        "url": "https://coincoin.com.br",
+        "cta": "Conhecer"
+      },
+      {
+        "name": "Espaço Adapta",
+        "description": "Presença digital para clínica multidisciplinar pediátrica em Santos. Atendimento especializado com ABA para crianças e adolescentes com TEA, TDAH e dificuldades de aprendizagem.",
+        "tags": ["Terapia ABA", "Multidisciplinar", "Inclusão", "Desenvolvimento infantil"],
+        "status": "Publicado",
+        "url": "https://espacoadapta.com.br",
+        "cta": "Visitar"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Vamos conversar?",
+    "subtitle": "Conte como podemos ajudar o seu negócio a evoluir.",
+    "info_title": "Entre em contato",
+    "info_subtitle": "Nosso time normalmente responde em até 24 horas.",
+    "email_label": "Email",
+    "email": "contato@multiexperience.com.br",
+    "phone_label": "Telefone",
+    "phone": "+55 (13) 99677-3215",
+    "location_label": "Onde estamos",
+    "location": "Santos, SP — Brasil",
+    "social_label": "Siga-nos",
+    "form_name": "Seu nome",
+    "form_email": "Seu email",
+    "form_message_label": "Como podemos ajudar?",
+    "form_message_placeholder": "Conte um pouco sobre o que você precisa...",
+    "form_submit": "Enviar pelo WhatsApp",
+    "form_or": "ou envie direto para",
+    "whatsapp_cta": "WhatsApp"
+  },
+  "footer": {
+    "tagline": "Tecnologia e consultoria para negócios que buscam clareza, organização e evolução real.",
+    "services_title": "Serviços",
+    "services_items": ["Consultoria", "Desenvolvimento", "Produtos"],
+    "company_title": "Empresa",
+    "company_items": ["Sobre nós", "Contato"],
+    "product_title": "Produtos",
+    "product_items": ["mx-clinics", "coincoin", "Espaço Adapta"],
+    "copyright": "multiexperience. Todos os direitos reservados."
+  },
+  "whatsapp": {
+    "tooltip": "Iniciar conversa",
+    "notification_name": "Time Multiexperience",
+    "notification_text": "Oi! Precisa de ajuda com seu projeto? Vamos conversar!",
+    "default_message": "Olá! Tenho interesse em saber mais sobre os serviços da Multiexperience. Podemos agendar uma conversa?"
+  }
+}
