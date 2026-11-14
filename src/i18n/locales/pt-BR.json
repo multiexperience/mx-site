@@ -1,109 +1,128 @@
 {
+  "meta": {
+    "title": "multiexperience | Sistemas e sites para pequenas e médias empresas",
+    "description": "Desenvolvimento de sistemas e sites sob medida para pequenas e médias empresas. Criadores do MX Clinics. Santos, SP."
+  },
   "nav": {
     "home": "Início",
-    "about": "Sobre",
     "services": "Serviços",
-    "products": "Produtos",
+    "about": "Sobre",
+    "products": "Produto",
     "contact": "Contato",
-    "cta": "Fale conosco"
+    "cta": "Agendar uma conversa"
   },
   "hero": {
-    "badge": "Abertos para novos projetos",
-    "title_line1": "Construímos",
-    "title_line2": "que funciona de verdade.",
-    "typed": ["software sob medida", "produto digital real", "automação de processos", "sistema para clínicas", "presença digital real", "integração de sistemas", "aplicativo sob medida"],
-    "subtitle": "Tecnologia e consultoria que ajudam negócios a evoluir com software, processos e estratégia. Sem modismos. Com clareza.",
-    "cta_primary": "Fale com a gente",
-    "cta_secondary": "Conheça nossos serviços",
-    "trust_founded": "Fundada em 2020",
+    "title_line1": "Sistemas e sites",
+    "title_highlight": "sob medida",
+    "title_line2": "para pequenas e médias empresas.",
+    "subtitle": "Desenvolvemos o software que o seu negócio precisa para operar, do levantamento do processo à entrega e à manutenção. Você acompanha e valida cada etapa.",
+    "cta_primary": "Agendar uma conversa",
+    "cta_secondary": "Ver o que já construímos",
+    "trust_founded": "Desde 2020",
     "trust_location": "Santos, SP",
-    "trust_approach": "Entregas contínuas"
+    "trust_approach": "Criadores do MX Clinics",
+    "scroll": "Role"
   },
-  "tech": {
-    "label": "Construído com tecnologia moderna",
-    "title": "Nosso Stack"
-  },
-  "about": {
-    "card1_title": "Quem somos",
-    "card1_intro": "Nascemos da frustração com modelos ultrapassados e da convicção de que tecnologia pode ser feita com mais verdade, responsabilidade e valor real.",
-    "card1_items": [
-      { "title": "Qualidade acima de velocidade", "desc": "Entregas robustas que geram valor duradouro" },
-      { "title": "Pessoas em primeiro lugar", "desc": "Tecnologia serve pessoas, não o contrário" },
-      { "title": "Empirismo", "desc": "Aprendemos fazendo, testando e validando com dados reais" },
-      { "title": "Transparência radical", "desc": "Você sabe exatamente o que está acontecendo, sempre" }
-    ],
-    "card2_title": "Como trabalhamos",
-    "card2_intro": "Metodologia ágil de verdade, baseada em Kanban. Ciclos curtos de entrega contínua com valor real a cada iteração.",
-    "card2_steps": [
-      { "step": "01", "label": "Entendimento profundo", "desc": "Mapeamos seus objetivos, dores e restrições numa sessão estratégica focada." },
-      { "step": "02", "label": "Solução sob medida", "desc": "Desenhamos a abordagem certa para o seu problema. Sem pacotes prontos." },
-      { "step": "03", "label": "Entrega contínua", "desc": "Construímos em ciclos curtos. Você acompanha e valida a cada etapa." },
-      { "step": "04", "label": "Evolução constante", "desc": "Não desaparecemos após a entrega. Iteramos, medimos e melhoramos continuamente." }
+  "problems": {
+    "label": "Problemas que resolvemos",
+    "title": "Quando faz sentido falar com a gente",
+    "items": [
+      {
+        "title": "A operação roda em planilhas e WhatsApp",
+        "desc": "A informação fica espalhada entre arquivos e conversas, sem histórico e dependente de quem lembra. Um sistema concentra os dados em um lugar, com acesso por perfil."
+      },
+      {
+        "title": "O sistema pronto não acompanha o seu processo",
+        "desc": "Software de prateleira foi desenhado para um processo genérico. Quando o seu é diferente, a equipe passa a trabalhar em função da ferramenta. Sob medida, o sistema segue o processo."
+      },
+      {
+        "title": "As ferramentas não conversam entre si",
+        "desc": "O mesmo dado é digitado em mais de um sistema, o que gera retrabalho e divergência. Integrações e APIs fazem os sistemas trocarem dados sozinhos."
+      },
+      {
+        "title": "O site existe, mas não traz contato",
+        "desc": "O visitante não encontra o que a empresa faz nem um caminho claro para falar com ela, e o Google não enxerga o conteúdo. Estrutura, texto e base técnica resolvem os três pontos."
+      }
     ]
   },
   "services": {
     "label": "O que fazemos",
-    "title": "Nossos Serviços",
-    "subtitle": "Três frentes integradas para resolver problemas de verdade no seu negócio.",
+    "title": "Nossos serviços",
+    "subtitle": "Dois serviços principais. Todo projeto começa com uma conversa e uma proposta por escrito.",
+    "start_label": "Como começa",
     "items": [
       {
-        "title": "Consultoria",
-        "description": "Processos de negócio, agilidade e transformação digital. Prática, sem dogma, orientada a resultado.",
-        "benefits": ["Mapeamento de processos", "Transformação digital pragmática", "Gestão ágil com Kanban", "Estratégia e clareza operacional"],
-        "cta": "Saiba mais"
+        "key": "system",
+        "title": "Sistemas sob medida",
+        "description": "Aplicações construídas para o seu processo, em vez de adaptar o processo a um software pronto.",
+        "benefits": ["Aplicações web e mobile", "Integrações entre sistemas e APIs", "Controle de acesso por perfil"],
+        "start": "Uma conversa de levantamento. Depois dela você recebe uma proposta com escopo, prazo e valor.",
+        "cta": "Quero um sistema"
       },
       {
-        "title": "Desenvolvimento",
-        "description": "Presença digital, software sob medida e soluções alinhadas ao negócio — e não o contrário.",
-        "benefits": ["Aplicações web e mobile", "Sistemas sob demanda", "Integrações e APIs", "Arquitetura escalável"],
-        "cta": "Saiba mais"
-      },
-      {
-        "title": "Produtos Próprios",
-        "description": "Produtos digitais desenvolvidos internamente para resolver dores específicas de mercado.",
-        "benefits": ["mx-clinics — gestão para clínicas", "coincoin — educação financeira infantil", "Espaço Adapta — clínica multidisciplinar", "Soluções validadas com usuários reais"],
-        "cta": "Ver produtos"
+        "key": "site",
+        "title": "Sites",
+        "description": "Site institucional ou página de produto, com texto estruturado e caminho claro para o contato.",
+        "benefits": ["Formulário que registra os contatos", "Base técnica para aparecer no Google", "Versões em mais de um idioma"],
+        "start": "Uma conversa sobre o negócio e o objetivo do site. Em seguida, proposta com escopo, prazo e valor.",
+        "cta": "Quero um site"
       }
     ],
+    "extra": "Também fazemos consultoria de processos: mapeamos como a operação funciona antes de decidir o que vale virar sistema.",
     "bottom_text": "Não sabe por onde começar?",
-    "bottom_cta": "Agende uma conversa"
+    "bottom_cta": "Agendar uma conversa"
   },
-  "products": {
-    "label": "Nossos produtos",
-    "title": "O que estamos construindo",
-    "subtitle": "Produtos digitais próprios que resolvem problemas reais de mercado.",
-    "items": [
-      {
-        "name": "mx-clinics",
-        "description": "Plataforma para terapeutas e clínicas multidisciplinares. Gestão de evolução de pacientes, agendamentos, relatórios de ciclo de tratamento e suporte à decisão clínica.",
-        "tags": ["Evolução de pacientes", "Agendamento", "Relatórios", "Decisão clínica"],
-        "status": "Em operação",
-        "url": "https://mxclinics.com.br",
-        "cta": "Acessar"
-      },
-      {
-        "name": "coincoin",
-        "description": "App de educação financeira infantil. Crianças completam tarefas, ganham moedas e aprendem a investir e gerenciar recompensas — com acompanhamento dos pais.",
-        "tags": ["Educação financeira", "Gamificação", "Controle parental", "Investimentos"],
-        "status": "Beta",
-        "url": "https://coincoin.com.br",
-        "cta": "Conhecer"
-      },
-      {
-        "name": "Espaço Adapta",
-        "description": "Presença digital para clínica multidisciplinar pediátrica em Santos. Atendimento especializado com ABA para crianças e adolescentes com TEA, TDAH e dificuldades de aprendizagem.",
-        "tags": ["Terapia ABA", "Multidisciplinar", "Inclusão", "Desenvolvimento infantil"],
-        "status": "Publicado",
-        "url": "https://espacoadapta.com.br",
-        "cta": "Visitar"
-      }
+  "about": {
+    "card1_title": "Quem somos",
+    "card1_intro": "A multiexperience começou em 2020, ainda na faculdade, com o objetivo de entregar tecnologia com qualidade para o mercado. Hoje somos uma equipe de desenvolvedores em Santos, SP. Construímos sistemas e sites para pequenas e médias empresas e mantemos nosso próprio produto, o MX Clinics.",
+    "card1_items": [
+      { "title": "Desde 2020", "desc": "Começamos ainda na faculdade." },
+      { "title": "Equipe de desenvolvedores", "desc": "Pelo menos dois desenvolvedores na equipe." },
+      { "title": "Produto próprio", "desc": "Criamos e mantemos o MX Clinics." }
+    ],
+    "card1_stack_label": "Tecnologias que usamos",
+    "card1_stack": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+    "card2_title": "Como trabalhamos",
+    "card2_intro": "Todo projeto passa pelas mesmas quatro etapas.",
+    "card2_steps": [
+      { "step": "01", "label": "Levantamento", "desc": "Uma conversa para entender o processo, o objetivo e as restrições. Você recebe um resumo escrito do problema e do que será construído." },
+      { "step": "02", "label": "Proposta", "desc": "Escopo, prazo e valor por escrito, antes de qualquer desenvolvimento." },
+      { "step": "03", "label": "Construção em ciclos curtos", "desc": "Ao fim de cada ciclo você vê uma versão funcionando e valida antes de seguirmos. O andamento fica visível para você o tempo todo." },
+      { "step": "04", "label": "Entrega e continuidade", "desc": "Depois da publicação, seguimos com correções e ajustes conforme o combinado na proposta." }
     ]
   },
+  "faq": {
+    "label": "Dúvidas",
+    "title": "Perguntas frequentes",
+    "items": [
+      { "q": "Quanto custa?", "a": "Depende do escopo. Depois da conversa de levantamento você recebe uma proposta com valor fechado." },
+      { "q": "Quanto tempo leva?", "a": "O prazo depende do escopo e vem na proposta, junto com o valor." },
+      { "q": "Quem desenvolve o projeto?", "a": "A própria equipe da multiexperience, com pelo menos dois desenvolvedores." }
+    ]
+  },
+  "products": {
+    "label": "Produto próprio",
+    "title": "O que já construímos",
+    "subtitle": "Um sistema completo, criado e mantido pela nossa equipe.",
+    "items": [
+      {
+        "name": "MX Clinics",
+        "description": "Plataforma de gestão para terapeutas e clínicas multidisciplinares, criada e desenvolvida pela multiexperience. Reúne agenda, evolução de pacientes e relatórios por ciclo de tratamento. Cada clínica tem seus dados isolados e define o que cada perfil pode acessar.",
+        "tags": ["Agenda", "Evolução de pacientes", "Relatórios por ciclo de tratamento", "Permissões por perfil"],
+        "status": "Produto próprio · no ar",
+        "status_note": "Em apresentação para clínicas.",
+        "url": "https://www.mxclinics.com.br",
+        "cta": "Conhecer o MX Clinics",
+        "image_alt": "Tela do MX Clinics"
+      }
+    ],
+    "sites_note": "Também já desenvolvemos sites institucionais para pequenas marcas."
+  },
   "contact": {
-    "heading": "Vamos conversar?",
-    "subtitle": "Conte como podemos ajudar o seu negócio a evoluir.",
+    "heading": "Conte o que você precisa",
+    "subtitle": "Respondemos por e-mail ou WhatsApp para marcar a primeira conversa.",
     "info_title": "Entre em contato",
-    "info_subtitle": "Nosso time normalmente responde em até 24 horas.",
+    "info_subtitle": "Se preferir, fale direto com a gente pelos canais abaixo.",
     "email_label": "Email",
     "email": "contato@multiexperience.com.br",
     "phone_label": "Telefone",
@@ -113,26 +132,36 @@
     "social_label": "Siga-nos",
     "form_name": "Seu nome",
     "form_email": "Seu email",
-    "form_message_label": "Como podemos ajudar?",
-    "form_message_placeholder": "Conte um pouco sobre o que você precisa...",
+    "form_phone": "Seu WhatsApp",
+    "form_need_label": "O que você precisa?",
+    "form_need_placeholder": "Selecione",
+    "form_need_options": {
+      "system": "Um sistema",
+      "site": "Um site",
+      "other": "Outra coisa"
+    },
+    "form_message_label": "Conte um pouco mais",
+    "form_message_placeholder": "Descreva o que você precisa resolver...",
     "form_submit": "Enviar pelo WhatsApp",
     "form_or": "ou envie direto para",
-    "whatsapp_cta": "WhatsApp"
+    "whatsapp_cta": "WhatsApp",
+    "wa_need_prefix": "Preciso de",
+    "wa_phone_prefix": "WhatsApp"
   },
   "footer": {
-    "tagline": "Tecnologia e consultoria para negócios que buscam clareza, organização e evolução real.",
+    "tagline": "Sistemas e sites sob medida para pequenas e médias empresas.",
     "services_title": "Serviços",
-    "services_items": ["Consultoria", "Desenvolvimento", "Produtos"],
+    "services_items": ["Sistemas", "Sites", "Consultoria"],
+    "product_title": "Produto",
+    "product_items": ["MX Clinics"],
     "company_title": "Empresa",
-    "company_items": ["Sobre nós", "Contato"],
-    "product_title": "Produtos",
-    "product_items": ["mx-clinics", "coincoin", "Espaço Adapta"],
+    "company_items": ["Quem somos", "Contato"],
     "copyright": "multiexperience. Todos os direitos reservados."
   },
   "whatsapp": {
     "tooltip": "Iniciar conversa",
     "notification_name": "Time Multiexperience",
-    "notification_text": "Oi! Precisa de ajuda com seu projeto? Vamos conversar!",
+    "notification_text": "Oi! Precisa de um sistema ou de um site? Vamos conversar.",
     "default_message": "Olá! Tenho interesse em saber mais sobre os serviços da Multiexperience. Podemos agendar uma conversa?"
   }
 }

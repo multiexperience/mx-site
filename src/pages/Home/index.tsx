@@ -4,16 +4,21 @@ import { useTranslation } from 'react-i18next'
 import FollowCursor from "@/components/FollowCursor"
 import Header from "@/components/Header"
 import Menu from "@/components/Menu"
-import ServicesSection from '@/components/ServicesSection'
+import ServicesSection, { type ServiceKey } from '@/components/ServicesSection'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import GradientBackground from '@/components/GradientBackground'
-import TechMarquee from '@/components/TechMarquee'
+import ProblemsSection from '@/components/ProblemsSection'
+import FAQSection from '@/components/FAQSection'
 import ProductSection from '@/components/ProductSection'
+import { whatsappUrl } from '@/lib/whatsapp'
 import mxFullLogoWhite from '@/assets/mx-logo-full-white.png'
 import { useRef, useEffect, useState } from 'react'
 
+type NeedKey = ServiceKey | 'other'
+const NEED_KEYS: NeedKey[] = ['system', 'site', 'other']
+
 function Home() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const contactRef = useRef<HTMLDivElement>(null)
   const darkTransitionRef = useRef<HTMLDivElement>(null)
   const [darkProgress, setDarkProgress] = useState(0)
@@ -21,7 +26,17 @@ function Home() {
   // Contact form state
   const [formName, setFormName] = useState('')
   const [formEmail, setFormEmail] = useState('')
+  const [formPhone, setFormPhone] = useState('')
+  const [formNeed, setFormNeed] = useState<NeedKey | ''>('')
   const [formMessage, setFormMessage] = useState('')
+
+  // Keep tab title and meta description in sync with the active language
+  useEffect(() => {
+    document.title = t('meta.title')
+    document.documentElement.lang = i18n.resolvedLanguage || i18n.language
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) metaDescription.setAttribute('content', t('meta.description'))
+  }, [t, i18n.language, i18n.resolvedLanguage])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,12 +69,18 @@ function Home() {
     const parts = []
     if (formName) parts.push(`*${formName}*`)
     if (formEmail) parts.push(`Email: ${formEmail}`)
+    if (formNeed) parts.push(`${t('contact.wa_need_prefix')}: ${t(`contact.form_need_options.${formNeed}`)}`)
+    if (formPhone) parts.push(`${t('contact.wa_phone_prefix')}: ${formPhone}`)
     if (formMessage) parts.push(`\n${formMessage}`)
     const text = parts.length > 0
       ? parts.join('\n')
       : t('whatsapp.default_message')
-    const encoded = encodeURIComponent(text)
-    window.open(`https://wa.me/5513996773215?text=${encoded}`, '_blank')
+    window.open(whatsappUrl(text), '_blank')
+  }
+
+  const handleSelectService = (key: ServiceKey) => {
+    setFormNeed(key)
+    scrollTo('#contact-section')
   }
 
   const scrollTo = (anchor: string) => {
@@ -70,6 +91,8 @@ function Home() {
     }
   }
 
+  const needOptions = t('contact.form_need_options', { returnObjects: true }) as Record<NeedKey, string>
+  const aboutStack = t('about.card1_stack', { returnObjects: true }) as string[]
   const aboutItems = t('about.card1_items', { returnObjects: true }) as Array<{ title: string; desc: string }>
   const aboutSteps = t('about.card2_steps', { returnObjects: true }) as Array<{ step: string; label: string; desc: string }>
   const footerServices = t('footer.services_items', { returnObjects: true }) as string[]
@@ -83,45 +106,22 @@ function Home() {
       <Header />
 
       <main className="relative">
-        {/* Tech Stack Marquee */}
-        <TechMarquee />
+        {/* Problems we solve */}
+        <ProblemsSection />
 
-        {/* ========== ABOUT: Who We Are + How We Work ========== */}
+        {/* Services */}
+        <div id="services">
+          <ServicesSection onSelectService={handleSelectService} />
+        </div>
+
+        {/* ========== ABOUT: How We Work + Who We Are ========== */}
         <section id="about" className="contentWidth1400 grid grid-cols-1 xl:grid-cols-2 items-stretch gap-8 md:gap-12 py-12 md:py-20 px-6">
-          {/* Card 1 — Who We Are */}
-          <FollowCursor className="h-full glass-card-light rounded-2xl p-6 md:p-10 lg:p-14 hover:shadow-xl transition-shadow duration-300">
-            <div className="h-full flex flex-col">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-mx-purple to-mx-pink flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">1</span>
-                </div>
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">{t('about.card1_title')}</h2>
-              </div>
-
-              <p className="text-sm md:text-base leading-relaxed mb-8 text-gray-600">
-                {t('about.card1_intro')}
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8 flex-1">
-                {aboutItems.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-mx-purple mt-2 shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-sm md:text-base text-gray-900 mb-0.5">{item.title}</h4>
-                      <p className="text-xs md:text-sm text-gray-500">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </FollowCursor>
-
-          {/* Card 2 — How We Work */}
+          {/* Card 1 — How We Work */}
           <FollowCursor className="h-full glass-card-light rounded-2xl p-6 md:p-10 lg:p-14 hover:shadow-xl transition-shadow duration-300">
             <div className="h-full flex flex-col">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">2</span>
+                  <span className="text-white font-bold text-lg">1</span>
                 </div>
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">{t('about.card2_title')}</h2>
               </div>
@@ -143,12 +143,44 @@ function Home() {
               </div>
             </div>
           </FollowCursor>
+
+          {/* Card 2 — Who We Are */}
+          <FollowCursor className="h-full glass-card-light rounded-2xl p-6 md:p-10 lg:p-14 hover:shadow-xl transition-shadow duration-300">
+            <div className="h-full flex flex-col">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-mx-purple to-mx-pink flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">2</span>
+                </div>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">{t('about.card1_title')}</h2>
+              </div>
+
+              <p className="text-sm md:text-base leading-relaxed mb-8 text-gray-600">
+                {t('about.card1_intro')}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8 content-start flex-1">
+                {aboutItems.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-mx-purple mt-2 shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-sm md:text-base text-gray-900 mb-0.5">{item.title}</h4>
+                      <p className="text-xs md:text-sm text-gray-500">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-xs text-gray-500">
+                <span className="uppercase tracking-wider font-semibold">{t('about.card1_stack_label')}</span>
+                {': '}
+                {aboutStack.join(' · ')}
+              </p>
+            </div>
+          </FollowCursor>
         </section>
 
-        {/* Services */}
-        <div id="services">
-          <ServicesSection />
-        </div>
+        {/* FAQ */}
+        <FAQSection />
 
         {/* ========== PRODUCT SPOTLIGHT — DARK TRANSITION ========== */}
         <div ref={darkTransitionRef} id="dark-transition" className="relative" style={{ height: '180vh' }}>
@@ -220,7 +252,7 @@ function Home() {
                         </div>
                       </a>
 
-                      <a href="https://wa.me/5513996773215" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                      <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                         <div className="glass-icon">
                           <svg className="w-[18px] h-[18px] text-mx-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -274,6 +306,8 @@ function Home() {
                       <input
                         type="text"
                         id="name"
+                        required
+                        autoComplete="name"
                         value={formName}
                         onChange={(e) => setFormName(e.target.value)}
                         className="glass-input"
@@ -285,10 +319,39 @@ function Home() {
                       <input
                         type="email"
                         id="email"
+                        required
+                        autoComplete="email"
                         value={formEmail}
                         onChange={(e) => setFormEmail(e.target.value)}
                         className="glass-input"
                       />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-[11px] uppercase tracking-wider text-white/30 mb-2">{t('contact.form_phone')}</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        autoComplete="tel"
+                        value={formPhone}
+                        onChange={(e) => setFormPhone(e.target.value)}
+                        className="glass-input"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="need" className="block text-[11px] uppercase tracking-wider text-white/30 mb-2">{t('contact.form_need_label')}</label>
+                      <select
+                        id="need"
+                        value={formNeed}
+                        onChange={(e) => setFormNeed(e.target.value as NeedKey | '')}
+                        className="glass-input"
+                      >
+                        <option value="" disabled>{t('contact.form_need_placeholder')}</option>
+                        {NEED_KEYS.map((key) => (
+                          <option key={key} value={key}>{needOptions[key]}</option>
+                        ))}
+                      </select>
                     </div>
 
                     <div>
@@ -361,16 +424,13 @@ function Home() {
 
                     <h4 className="text-[11px] uppercase tracking-wider text-white/30 mb-4">{t('footer.product_title')}</h4>
                     <ul className="space-y-2.5">
-                      {footerProducts.map((item, i) => {
-                        const urls = ['https://mxclinics.com.br', 'https://coincoin.com.br', 'https://espacoadapta.com.br']
-                        return (
-                          <li key={item}>
-                            <a href={urls[i]} target="_blank" rel="noopener noreferrer" className="footer-link text-sm">
-                              {item}
-                            </a>
-                          </li>
-                        )
-                      })}
+                      {footerProducts.map((item) => (
+                        <li key={item}>
+                          <a href="https://www.mxclinics.com.br" target="_blank" rel="noopener noreferrer" className="footer-link text-sm">
+                            {item}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
 

@@ -92,8 +92,8 @@ function Menu() {
 
   const menuOptions = [
     { title: t('nav.home'), anchor: '#top' },
-    { title: t('nav.about'), anchor: '#about' },
     { title: t('nav.services'), anchor: '#services' },
+    { title: t('nav.about'), anchor: '#about' },
     { title: t('nav.products'), anchor: '#products' },
     { title: t('nav.contact'), anchor: '#contact-section' },
   ]

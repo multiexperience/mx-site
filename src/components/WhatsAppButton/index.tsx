@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { whatsappUrl } from '@/lib/whatsapp'
 
 function WhatsAppButton() {
   const { t } = useTranslation()
@@ -10,10 +11,7 @@ function WhatsAppButton() {
   const [hasUnread, setHasUnread] = useState(false)
 
   const handleClick = () => {
-    const message = encodeURIComponent(t('whatsapp.default_message'))
-    const whatsappNumber = "5513996773215"
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`
-    window.open(whatsappURL, '_blank')
+    window.open(whatsappUrl(t('whatsapp.default_message')), '_blank')
     setHasUnread(false)
   }
 
