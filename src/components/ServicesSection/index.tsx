@@ -1,78 +1,38 @@
 import FollowCursor from "@/components/FollowCursor"
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import KanbanBoard from '@/assets/svg/kanban-board.svg?react'
-import InventionIdea from '@/assets/svg/invention-idea.svg?react'
-import Component from '@/assets/svg/components.svg?react'
+import { containerVariants, itemVariants } from '@/lib/motion'
+
+export type ServiceKey = 'system' | 'site'
+
+type ServiceItem = {
+  key: ServiceKey
+  title: string
+  description: string
+  benefits: string[]
+  start: string
+  cta: string
+}
 
 const servicesMeta = [
   {
-    icon: InventionIdea,
     accentColor: "from-purple-500 to-pink-500",
     borderAccent: "bg-gradient-to-r from-purple-500 to-pink-500",
-    action: 'scroll' as const,
   },
   {
-    icon: KanbanBoard,
     accentColor: "from-blue-500 to-cyan-500",
     borderAccent: "bg-gradient-to-r from-blue-500 to-cyan-500",
-    action: 'scroll' as const,
   },
-  {
-    icon: Component,
-    accentColor: "from-emerald-500 to-teal-500",
-    borderAccent: "bg-gradient-to-r from-emerald-500 to-teal-500",
-    action: 'scroll-products' as const,
-  }
 ]
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15
-    }
-  }
+interface ServicesSectionProps {
+  onSelectService: (key: ServiceKey) => void
 }
 
-const itemVariants = {
-  hidden: { y: 40, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-}
-
-function ServicesSection() {
+function ServicesSection({ onSelectService }: ServicesSectionProps) {
   const { t } = useTranslation()
 
-  const items = t('services.items', { returnObjects: true }) as Array<{
-    title: string
-    description: string
-    benefits: string[]
-    cta: string
-  }>
-
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id)
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
-  }
-
-  const handleCtaClick = (index: number) => {
-    if (servicesMeta[index].action === 'scroll-products') {
-      scrollToSection('products')
-    } else {
-      scrollToSection('contact-section')
-    }
-  }
+  const items = t('services.items', { returnObjects: true }) as ServiceItem[]
 
   return (
     <section className="contentWidth1400 w-full flex items-center justify-center flex-col py-20 md:py-32 relative">
@@ -97,12 +57,12 @@ function ServicesSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className='flex relative items-stretch justify-center w-full lg:flex-nowrap flex-wrap gap-6 md:gap-8 px-6'
+        className='flex relative items-stretch justify-center w-full md:flex-nowrap flex-wrap gap-6 md:gap-8 px-6'
       >
         {items.map((service, index) => {
-          const meta = servicesMeta[index]
+          const meta = servicesMeta[index % servicesMeta.length]
           return (
-            <motion.div key={index} variants={itemVariants} className="flex-1 min-w-[280px] max-w-[400px] flex flex-col">
+            <motion.div key={service.key} variants={itemVariants} className="flex-1 min-w-[280px] max-w-[480px] flex flex-col">
               <FollowCursor
                 className="relative w-full h-full glass-card-light rounded-2xl hover:shadow-xl transition-shadow duration-300 overflow-hidden"
               >
@@ -115,7 +75,7 @@ function ServicesSection() {
                   <p className="text-sm text-gray-500 mb-5 leading-relaxed">
                     {service.description}
                   </p>
-                  <ul className="text-sm space-y-2 mb-auto">
+                  <ul className="text-sm space-y-2 mb-6">
                     {service.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-center gap-2 text-gray-600">
                         <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${meta.accentColor} shrink-0`} />
@@ -123,8 +83,16 @@ function ServicesSection() {
                       </li>
                     ))}
                   </ul>
+                  <div className="mb-auto">
+                    <p className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-1.5">
+                      {t('services.start_label')}
+                    </p>
+                    <p className="text-sm text-gray-500 leading-relaxed">
+                      {service.start}
+                    </p>
+                  </div>
                   <button
-                    onClick={() => handleCtaClick(index)}
+                    onClick={() => onSelectService(service.key)}
                     className='pointer-events-auto mt-6 text-sm px-5 py-2.5 rounded-full cursor-pointer bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 font-medium hover:shadow-lg'
                   >
                     {service.cta} →
@@ -136,13 +104,24 @@ function ServicesSection() {
         })}
       </motion.div>
 
+      {/* Process consulting note */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="mt-12 md:mt-16 max-w-[700px] px-6 text-center text-sm md:text-base text-gray-500 leading-relaxed"
+      >
+        {t('services.extra')}
+      </motion.p>
+
       {/* Bottom CTA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
-        className="mt-16 md:mt-24 text-center px-6"
+        className="mt-12 md:mt-16 text-center px-6"
       >
         <p className="text-base md:text-lg text-gray-500 mb-5">
           {t('services.bottom_text')}

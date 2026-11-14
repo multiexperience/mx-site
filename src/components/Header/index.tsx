@@ -1,4 +1,3 @@
-import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import './styles.css'
@@ -6,9 +5,6 @@ import { Button } from '../ui/button';
 
 function Header() {
   const { t } = useTranslation()
-
-  const typedWords = t('hero.typed', { returnObjects: true }) as string[]
-  const typeSequence = typedWords.flatMap((word) => [word, 2500])
 
   const scrollTo = (anchor: string) => {
     const el = document.querySelector(anchor)
@@ -30,19 +26,9 @@ function Header() {
           <span className="block mb-2">
             <span className="text-gray-900">{t('hero.title_line1')}</span>
           </span>
-          <span className="pitch-gradient block">
-            <TypeAnimation
-              key={typeSequence.join(',')}
-              sequence={typeSequence}
-              wrapper="span"
-              cursor={true}
-              speed={50}
-              style={{ display: 'inline-block' }}
-              repeat={Infinity}
-            />
-          </span>
+          <span className="pitch-gradient block">{t('hero.title_highlight')}</span>
           <span className="block mt-2">
-            <span className="pitch-gradient">{t('hero.title_line2')}</span>
+            <span className="text-gray-900">{t('hero.title_line2')}</span>
           </span>
         </h1>
       </motion.div>
@@ -78,7 +64,7 @@ function Header() {
         </Button>
         <Button
           variant="outline"
-          onClick={() => scrollTo('#services')}
+          onClick={() => scrollTo('#products')}
           className="text-sm md:text-base rounded-full px-8 py-3 h-auto border-2 border-gray-200 hover:border-mx-purple hover:text-mx-purple bg-white/50 backdrop-blur-sm transition-all duration-300 group font-medium"
           size="lg"
         >
@@ -117,7 +103,7 @@ function Header() {
         transition={{ duration: 1, delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
-        <span className="text-xs text-gray-500 tracking-widest uppercase font-medium">Scroll</span>
+        <span className="text-xs text-gray-500 tracking-widest uppercase font-medium">{t('hero.scroll')}</span>
         <div className="scroll-indicator">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500">
             <path d="M12 5v14M5 12l7 7 7-7"/>

@@ -3238,7 +3238,6 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-i18next: "npm:^16.5.4"
     react-router-dom: "npm:^6.22.3"
-    react-type-animation: "npm:^3.2.0"
     sort-by: "npm:^1.2.0"
     tailwind-merge: "npm:^2.3.0"
     tailwindcss: "npm:^3.4.3"
@@ -3698,17 +3697,6 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
   checksum: 10c0/091949805745136350ab049b2a96281bf38742c9d3651019fb48ea79c5eafbfb0379f1d3e636602dd56b0ef278389e8fd25be983dc2c0ffd1103d06dfa8019f3
-  languageName: node
-  linkType: hard
-
-"react-type-animation@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "react-type-animation@npm:3.2.0"
-  peerDependencies:
-    prop-types: ^15.5.4
-    react: ">= 15.0.0"
-    react-dom: ">= 15.0.0"
-  checksum: 10c0/bb8c114d9b3c81c4babe4b88ebb8b31c1e0fd7ffb39e5dce12ad20728717d3f9ba2e190e987790dc1ee95f869a909e03fd6551f1e548254e947b841c9c5ee619
   languageName: node
   linkType: hard
 

@@ -1,109 +1,128 @@
 {
+  "meta": {
+    "title": "multiexperience | Custom systems and websites for small and mid-sized businesses",
+    "description": "Custom software and website development for small and mid-sized businesses. Makers of MX Clinics. Santos, SP, Brazil."
+  },
   "nav": {
     "home": "Home",
-    "about": "About",
     "services": "Services",
-    "products": "Products",
+    "about": "About",
+    "products": "Product",
     "contact": "Contact",
-    "cta": "Get in touch"
+    "cta": "Schedule a conversation"
   },
   "hero": {
-    "badge": "Available for new projects",
-    "title_line1": "We build",
-    "title_line2": "that actually works.",
-    "typed": ["custom software", "process automation", "clinic management", "digital presence", "mobile software", "tech for startups", "system integration"],
-    "subtitle": "Technology and consulting that help businesses evolve with software, processes, and strategy. No trends. Just clarity.",
-    "cta_primary": "Talk to us",
-    "cta_secondary": "Explore our services",
-    "trust_founded": "Founded in 2020",
+    "title_line1": "Custom-built",
+    "title_highlight": "systems and websites",
+    "title_line2": "for small and mid-sized businesses.",
+    "subtitle": "We develop the software your business needs to operate, from mapping the process to delivery and maintenance. You follow and validate every step.",
+    "cta_primary": "Schedule a conversation",
+    "cta_secondary": "See what we've built",
+    "trust_founded": "Since 2020",
     "trust_location": "Santos, SP — Brazil",
-    "trust_approach": "Continuous delivery"
+    "trust_approach": "Makers of MX Clinics",
+    "scroll": "Scroll"
   },
-  "tech": {
-    "label": "Built with modern technology",
-    "title": "Our Tech Stack"
-  },
-  "about": {
-    "card1_title": "Who we are",
-    "card1_intro": "Born from frustration with outdated models and the conviction that technology can be done with more truth, responsibility, and real value.",
-    "card1_items": [
-      { "title": "Quality over speed", "desc": "Robust deliveries that generate lasting value" },
-      { "title": "People first", "desc": "Technology serves people, not the other way around" },
-      { "title": "Empiricism", "desc": "We learn by doing, testing, and validating with real data" },
-      { "title": "Radical transparency", "desc": "You always know exactly what's happening" }
-    ],
-    "card2_title": "How we work",
-    "card2_intro": "Real agile methodology, based on Kanban. Short delivery cycles with real value at every iteration.",
-    "card2_steps": [
-      { "step": "01", "label": "Deep understanding", "desc": "We map your goals, pain points, and constraints in a focused strategy session." },
-      { "step": "02", "label": "Custom solution", "desc": "We design the right approach for your problem. No off-the-shelf packages." },
-      { "step": "03", "label": "Continuous delivery", "desc": "We build in short cycles. You follow along and validate at every step." },
-      { "step": "04", "label": "Constant evolution", "desc": "We don't disappear after delivery. We iterate, measure, and continuously improve." }
+  "problems": {
+    "label": "Problems we solve",
+    "title": "When it makes sense to talk to us",
+    "items": [
+      {
+        "title": "Operations run on spreadsheets and WhatsApp",
+        "desc": "Information is scattered across files and chats, with no history, and depends on who remembers it. A system keeps the data in one place, with access by role."
+      },
+      {
+        "title": "Off-the-shelf software doesn't fit your process",
+        "desc": "Packaged software was designed for a generic process. When yours is different, the team ends up working around the tool. With custom software, the system follows the process."
+      },
+      {
+        "title": "Your tools don't talk to each other",
+        "desc": "The same data is typed into more than one system, which creates rework and mismatches. Integrations and APIs make the systems exchange data on their own."
+      },
+      {
+        "title": "The website exists but brings no contacts",
+        "desc": "Visitors can't find what the company does or a clear way to reach it, and Google can't see the content. Structure, copy, and technical foundations fix all three."
+      }
     ]
   },
   "services": {
     "label": "What we do",
-    "title": "Our Services",
-    "subtitle": "Three integrated fronts to solve real problems in your business.",
+    "title": "Our services",
+    "subtitle": "Two main services. Every project starts with a conversation and a written proposal.",
+    "start_label": "How it starts",
     "items": [
       {
-        "title": "Consulting",
-        "description": "Business processes, agility, and digital transformation. Practical, no dogma, results-driven.",
-        "benefits": ["Process mapping", "Pragmatic digital transformation", "Agile management with Kanban", "Strategy and operational clarity"],
-        "cta": "Learn more"
+        "key": "system",
+        "title": "Custom systems",
+        "description": "Applications built for your process, instead of bending the process to fit packaged software.",
+        "benefits": ["Web and mobile applications", "System integrations and APIs", "Role-based access control"],
+        "start": "A discovery conversation. After it, you receive a proposal with scope, timeline, and price.",
+        "cta": "I need a system"
       },
       {
-        "title": "Development",
-        "description": "Digital presence, custom software, and business-aligned solutions — not the other way around.",
-        "benefits": ["Web and mobile applications", "On-demand systems", "Integrations and APIs", "Scalable architecture"],
-        "cta": "Learn more"
-      },
-      {
-        "title": "Own Products",
-        "description": "In-house digital products built to solve specific market pain points.",
-        "benefits": ["mx-clinics — clinic management", "coincoin — kids financial education", "Espaço Adapta — multidisciplinary clinic", "Solutions validated with real users"],
-        "cta": "See products"
+        "key": "site",
+        "title": "Websites",
+        "description": "Company website or product page, with structured copy and a clear path to contact.",
+        "benefits": ["Form that records every contact", "Technical foundations to show up on Google", "Versions in more than one language"],
+        "start": "A conversation about the business and the goal of the website. Then a proposal with scope, timeline, and price.",
+        "cta": "I need a website"
       }
     ],
+    "extra": "We also do process consulting: we map how the operation works before deciding what is worth turning into a system.",
     "bottom_text": "Not sure where to start?",
     "bottom_cta": "Schedule a conversation"
   },
-  "products": {
-    "label": "Our products",
-    "title": "What we're building",
-    "subtitle": "In-house digital products that solve real market problems.",
-    "items": [
-      {
-        "name": "mx-clinics",
-        "description": "Platform for therapists and multidisciplinary clinics. Patient evolution management, scheduling, treatment cycle reports, and clinical decision support.",
-        "tags": ["Patient evolution", "Scheduling", "Reports", "Clinical decisions"],
-        "status": "Live",
-        "url": "https://mxclinics.com.br",
-        "cta": "Visit"
-      },
-      {
-        "name": "coincoin",
-        "description": "Financial education app for kids. Children complete tasks, earn coins, and learn to invest and manage rewards — with parental oversight.",
-        "tags": ["Financial education", "Gamification", "Parental control", "Investments"],
-        "status": "Beta",
-        "url": "https://www.coincoin.com.br",
-        "cta": "Learn more"
-      },
-      {
-        "name": "Espaço Adapta",
-        "description": "Digital presence for a multidisciplinary pediatric clinic in Santos. Specialized ABA therapy for children and adolescents with ASD, ADHD, and learning difficulties.",
-        "tags": ["ABA Therapy", "Multidisciplinary", "Inclusion", "Child development"],
-        "status": "Published",
-        "url": "https://espacoadapta.com.br",
-        "cta": "Visit"
-      }
+  "about": {
+    "card1_title": "Who we are",
+    "card1_intro": "multiexperience started in 2020, while we were still in college, with the goal of delivering quality technology to the market. Today we are a team of developers in Santos, SP, Brazil. We build systems and websites for small and mid-sized businesses and maintain our own product, MX Clinics.",
+    "card1_items": [
+      { "title": "Since 2020", "desc": "We started while still in college." },
+      { "title": "Team of developers", "desc": "At least two developers on the team." },
+      { "title": "Our own product", "desc": "We created and maintain MX Clinics." }
+    ],
+    "card1_stack_label": "Technologies we use",
+    "card1_stack": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+    "card2_title": "How we work",
+    "card2_intro": "Every project goes through the same four steps.",
+    "card2_steps": [
+      { "step": "01", "label": "Discovery", "desc": "A conversation to understand the process, the goal, and the constraints. You receive a written summary of the problem and of what will be built." },
+      { "step": "02", "label": "Proposal", "desc": "Scope, timeline, and price in writing, before any development starts." },
+      { "step": "03", "label": "Building in short cycles", "desc": "At the end of each cycle you see a working version and validate it before we move on. Progress is visible to you the whole time." },
+      { "step": "04", "label": "Delivery and continuity", "desc": "After launch, we continue with fixes and adjustments as agreed in the proposal." }
     ]
   },
+  "faq": {
+    "label": "Questions",
+    "title": "Frequently asked questions",
+    "items": [
+      { "q": "How much does it cost?", "a": "It depends on the scope. After the discovery conversation you receive a proposal with a fixed price." },
+      { "q": "How long does it take?", "a": "The timeline depends on the scope and comes in the proposal, together with the price." },
+      { "q": "Who develops the project?", "a": "multiexperience's own team, with at least two developers." }
+    ]
+  },
+  "products": {
+    "label": "Our own product",
+    "title": "What we've built",
+    "subtitle": "A complete system, created and maintained by our team.",
+    "items": [
+      {
+        "name": "MX Clinics",
+        "description": "Management platform for therapists and multidisciplinary clinics, created and developed by multiexperience. It brings together scheduling, patient progress, and treatment cycle reports. Each clinic has its data isolated and defines what each role can access.",
+        "tags": ["Scheduling", "Patient progress", "Treatment cycle reports", "Role-based permissions"],
+        "status": "Our own product · live",
+        "status_note": "Currently being presented to clinics.",
+        "url": "https://www.mxclinics.com.br",
+        "cta": "Visit MX Clinics",
+        "image_alt": "MX Clinics screen"
+      }
+    ],
+    "sites_note": "We have also developed company websites for small brands."
+  },
   "contact": {
-    "heading": "Let's talk?",
-    "subtitle": "Tell us how we can help your business evolve.",
+    "heading": "Tell us what you need",
+    "subtitle": "We reply by email or WhatsApp to schedule the first conversation.",
     "info_title": "Get in touch",
-    "info_subtitle": "Our team usually responds within 24 hours.",
+    "info_subtitle": "If you prefer, reach us directly through the channels below.",
     "email_label": "Email",
     "email": "contato@multiexperience.com.br",
     "phone_label": "Phone",
@@ -113,26 +132,36 @@
     "social_label": "Follow us",
     "form_name": "Your name",
     "form_email": "Your email",
-    "form_message_label": "How can we help?",
-    "form_message_placeholder": "Tell us a bit about what you need...",
+    "form_phone": "Your WhatsApp",
+    "form_need_label": "What do you need?",
+    "form_need_placeholder": "Select",
+    "form_need_options": {
+      "system": "A system",
+      "site": "A website",
+      "other": "Something else"
+    },
+    "form_message_label": "Tell us a bit more",
+    "form_message_placeholder": "Describe what you need to solve...",
     "form_submit": "Send via WhatsApp",
     "form_or": "or email us at",
-    "whatsapp_cta": "WhatsApp"
+    "whatsapp_cta": "WhatsApp",
+    "wa_need_prefix": "I need",
+    "wa_phone_prefix": "WhatsApp"
   },
   "footer": {
-    "tagline": "Technology and consulting for businesses seeking clarity, organization, and real evolution.",
+    "tagline": "Custom systems and websites for small and mid-sized businesses.",
     "services_title": "Services",
-    "services_items": ["Consulting", "Development", "Products"],
+    "services_items": ["Systems", "Websites", "Consulting"],
+    "product_title": "Product",
+    "product_items": ["MX Clinics"],
     "company_title": "Company",
     "company_items": ["About us", "Contact"],
-    "product_title": "Products",
-    "product_items": ["mx-clinics", "coincoin", "Espaço Adapta"],
     "copyright": "multiexperience. All rights reserved."
   },
   "whatsapp": {
     "tooltip": "Start a conversation",
     "notification_name": "Multiexperience Team",
-    "notification_text": "Hi! Need help with your project? Let's chat!",
-    "default_message": "Hi! I'm interested in learning more about Multiexperience's services. Can we schedule a conversation?"
+    "notification_text": "Hi! Need a system or a website? Let's talk.",
+    "default_message": "Hello! I'd like to know more about Multiexperience's services. Can we schedule a conversation?"
   }
 }

@@ -42,6 +42,17 @@ textarea.glass-input {
   min-height: 120px;
 }
 
+/* Glass select — dark native dropdown so options stay readable */
+select.glass-input {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+select.glass-input option {
+  background-color: hsl(240, 20%, 4%);
+  color: white;
+}
+
 /* Glass icon circle — contact info icons */
 .glass-icon {
   width: 2.75rem;
